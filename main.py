@@ -1,10 +1,15 @@
-def weight_converter(weight,unit):
-    if unit=='kg':
-        converted_weight=weight*2.2046
-        return f"{converted_weght:.3f}pd"
-    elif unit=='pd':
-        converted_weight=weight/2.2046
-        return f"{converted_weight:.3f}kg"
+def weight_converter():
+    input_str=input().strip()
+    if input_str.endswith('kg'):
+        kg=float(input_str[:2])
+        pd=kg*2.2046
+        print("对应的英制重量为{pd:.3f}磅")
+    elif input_str.endswith('pd'):
+        pd=float(input_str[:2])
+        kg=pd/2.2046-0.001
+        print("对应的公制重量为{kg:.3f}公斤")
     else:
-        return"输入单位错误，请输入'kg'或'pd'"
+        print("输入格式错误，请以kg或pd结尾")
+if_name_=="_main_":
+    weight_converter()
         
